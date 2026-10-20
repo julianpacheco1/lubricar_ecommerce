@@ -1,0 +1,173 @@
+/* Panel liviano LubriCar — como el mockup opción 3 */
+
+:root {
+    --lubricar-accent: #03d8c8;
+    --lubricar-accent-strong: #0d9488;
+    --lubricar-sidebar: #eef1f4;
+    --lubricar-bg: #f7f8fa;
+    --lubricar-ink: #1e293b;
+    --lubricar-muted: #64748b;
+    --lubricar-line: #e2e8f0;
+}
+
+/* Área principal */
+.fi-body {
+    background-color: var(--lubricar-bg) !important;
+}
+
+.fi-main,
+.fi-main-ctn {
+    background-color: var(--lubricar-bg) !important;
+}
+
+/* Sidebar gris claro (distinto del contenido) */
+.fi-sidebar {
+    background-color: var(--lubricar-sidebar) !important;
+}
+
+.fi-sidebar-header {
+    background-color: var(--lubricar-sidebar) !important;
+    border-bottom: 1px solid var(--lubricar-line);
+}
+
+.fi-sidebar-nav {
+    background-color: var(--lubricar-sidebar) !important;
+}
+
+/* Sin grupos: ocultar encabezados de grupo si quedan */
+.fi-sidebar-group-label {
+    display: none !important;
+}
+
+.fi-sidebar-group {
+    row-gap: 0.25rem;
+}
+
+/* Ítems del menú independientes */
+.fi-sidebar-item-button {
+    border-radius: 0.75rem !important;
+    margin-inline: 0.35rem;
+    color: var(--lubricar-ink) !important;
+}
+
+.fi-sidebar-item-button:hover {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Activo: pastilla blanca + teal */
+.fi-sidebar-item-active .fi-sidebar-item-button {
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-label,
+.fi-sidebar-item-active .fi-sidebar-item-icon {
+    color: var(--lubricar-accent-strong) !important;
+    font-weight: 600;
+}
+
+/* Topbar blanca limpia */
+.fi-topbar nav {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid var(--lubricar-line);
+    box-shadow: none !important;
+}
+
+.fi-logo img {
+    max-height: 2rem;
+}
+
+/* Título Panel */
+.fi-header-heading {
+    color: var(--lubricar-ink) !important;
+    font-weight: 700 !important;
+}
+
+.fi-header-subheading {
+    color: var(--lubricar-muted) !important;
+}
+
+/* Grid 2x2 de tarjetas */
+.lubricar-panel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .lubricar-panel-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.lubricar-card {
+    background: #ffffff;
+    border: 1px solid var(--lubricar-line);
+    border-radius: 1rem;
+    padding: 1.35rem 1.4rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 11rem;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.lubricar-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.lubricar-card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--lubricar-ink);
+}
+
+.lubricar-card-icon {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.65rem;
+    border: 1.5px solid var(--lubricar-accent);
+    color: var(--lubricar-accent-strong);
+}
+
+.lubricar-card-value {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--lubricar-accent-strong);
+    line-height: 1.2;
+    margin-bottom: 0.35rem;
+}
+
+.lubricar-card-meta {
+    font-size: 0.875rem;
+    color: var(--lubricar-muted);
+    margin-bottom: auto;
+    padding-bottom: 1rem;
+}
+
+.lubricar-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--lubricar-accent-strong);
+    text-decoration: none;
+    border-top: 1px solid var(--lubricar-line);
+    padding-top: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.lubricar-card-link:hover {
+    color: #0f766e;
+}
+
+.lubricar-card-link--disabled {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+}
